@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Luong - Phenikaa HR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .sidebar { position: fixed; left: 0; top: 0; width: 220px; height: 100vh; background: linear-gradient(180deg, #1a3a5c, #0f2844); color: white; padding-top: 20px; }
+        .sidebar img { width: 60px; display: block; margin: 0 auto 10px; }
+        .sidebar h6 { text-align: center; font-size: 12px; margin-bottom: 30px; }
+        .sidebar a { display: block; color: rgba(255,255,255,0.8); padding: 12px 20px; text-decoration: none; }
+        .sidebar a:hover, .sidebar a.active { background: rgba(255,255,255,0.1); color: white; border-left: 3px solid #f5a623; }
+        .main { margin-left: 220px; padding: 20px; background: #f5f6fa; min-height: 100vh; }
+        .badge-hc { background: #27ae60; }
+        .badge-hd { background: #e67e22; }
+        .summary-card { background: linear-gradient(135deg, #1a3a5c, #2d5a87); color: white; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img th:src="@{/images/logo.png}" alt="Logo">
+        <h6>QUAN LY NHAN SU<br>Dai hoc Phenikaa</h6>
+        <a href="/nhanvien">Danh sach nhan vien</a>
+        <a href="/nhanvien/them">Them nhan vien</a>
+        <a href="/nhanvien/luong" class="active">Tinh luong</a>
+        <hr style="border-color: rgba(255,255,255,0.2); margin: 20px;">
+        <form th:action="@{/logout}" method="post" style="padding: 0 20px;">
+            <button type="submit" class="btn btn-outline-light btn-sm w-100">Dang xuat</button>
+        </form>
+    </div>
+    <div class="main">
+        <h4 class="mb-3">Bang Tinh Luong Nhan Vien</h4>
+        
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card summary-card">
+                    <div class="card-body text-center">
+                        <h6>Tong so nhan vien</h6>
+                        <h2 th:text="${#lists.size(danhSachNhanVien)}">0</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card summary-card">
+                    <div class="card-body text-center">
+                        <h6>Tong quy luong</h6>
+                        <h4 th:text="${#numbers.formatDecimal(tongLuong, 0, 'COMMA', 0, 'POINT')} + ' VND'">0</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card summary-card">
+                    <div class="card-body text-center">
+                        <h6>Luong trung binh</h6>
+                        <h4 th:text="${#lists.size(danhSachNhanVien) > 0 ? #numbers.formatDecimal(tongLuong / #lists.size(danhSachNhanVien), 0, 'COMMA', 0, 'POINT') + ' VND' : '0 VND'}">0</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body p-0">
+                <table class="table table-hover mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Ma NV</th>
+                            <th>Ho ten</th>
+                            <th>Chuc vu</th>
+                            <th>He so</th>
+                            <th>Luong CB</th>
+                            <th>PC An trua</th>
+                            <th>PC Xang xe</th>
+                            <th>Tong luong</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="nv : ${danhSachNhanVien}">
+                            <td th:text="${nv.maNhanVien}"></td>
+                            <td th:text="${nv.hoTen}"></td>
+                            <td th:text="${nv.chucVu}"></td>
+                            <td th:text="${nv.heSo}"></td>
+                            <td th:text="${#numbers.formatDecimal(nv.luongCoBan, 0, 'COMMA', 0, 'POINT')}"></td>
+                            <td th:text="${#numbers.formatDecimal(nv.phuCapAnTrua, 0, 'COMMA', 0, 'POINT')}"></td>
+                            <td th:text="${#numbers.formatDecimal(nv.phuCapXangXe, 0, 'COMMA', 0, 'POINT')}"></td>
+                            <td><strong th:text="${#numbers.formatDecimal(nv.tongLuong, 0, 'COMMA', 0, 'POINT')}"></strong></td>
+                            <td><a th:href="@{/nhanvien/luong/{id}(id=${nv.id})}" class="btn btn-info btn-sm">Chi tiet</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

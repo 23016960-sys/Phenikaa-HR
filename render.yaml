@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: phenikaa-hr
+    runtime: docker
+    region: singapore
+    plan: free
+    healthCheckPath: /login
+    envVars:
+      - key: JAVA_OPTS
+        value: -Xmx256m
