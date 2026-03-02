@@ -1,53 +1,167 @@
- Phenikaa HR -- Hệ thống Quản lý Nhân sự Đại học Phenikaa
+Phenikaa HR - Nhóm 2
 Thành viên nhóm
 
--   Backend Developer
--   Nguyễn Văn Bắc 23016960
--   Frontend Developer
--   Phạm Tuấn Đạt 23010889
+Nguyễn Văn Bắc
+23016960
+Phạm Tuấn Đạt
+23010889
+Mô tả dự án
 
+Phenikaa HR là hệ thống quản lý nhân sự dành cho Đại học Phenikaa, được xây dựng bằng Java Spring Boot.
 
-------------------------------------------------------------------------
+Ứng dụng hỗ trợ quản lý toàn diện về nhân viên, tài khoản đăng nhập, phân loại theo trường – khoa – chức vụ và tính lương tự động.
 
-** Giới thiệu dự án
+Chức năng chính
+Quản lý nhân viên (Employee Management)
 
-**Phenikaa HR** là hệ thống quản lý nhân sự được xây dựng bằng Spring
-Boot 3.1.4 và Java 17.\
-Hệ thống hỗ trợ quản lý nhân viên, tính lương tự động và đảm bảo bảo mật
-bằng Spring Security.
+Thêm, sửa, xóa, hiển thị danh sách nhân viên
 
-------------------------------------------------------------------------
-**Chức năng hệ thống
+Quản lý thông tin: mã nhân viên, họ tên, trường, khoa, chức vụ
 
-  STT   Chức năng             Mô tả
-  ----- --------------------- -----------------------------------------
-  1     Đăng nhập             Xác thực người dùng bằng email/mật khẩu
-  2     Danh sách nhân viên   Hiển thị tất cả nhân viên
-  3     Thêm nhân viên        Nhập thông tin nhân viên mới
-  4     Sửa nhân viên         Cập nhật thông tin
-  5     Xóa nhân viên         Xóa khỏi hệ thống
-  6     Xem chi tiết          Hiển thị đầy đủ thông tin và lương
-  7     Tính lương            Thống kê và chi tiết lương
+Tự động gán hệ số theo chức vụ
 
-------------------------------------------------------------------------
+Phân loại nhân viên: Hành chính / Hợp đồng
 
-** Kiến trúc hệ thống
+Quản lý tài khoản (Account Management)
 
-Hệ thống được xây dựng theo mô hình **MVC (Model -- View --
-Controller)**.
+Đăng ký tài khoản
 
--   Backend: Spring Boot\
--   Database: H2\
--   Frontend: Thymeleaf + Bootstrap\
--   Security: Spring Security
+Đăng nhập hệ thống
 
-------------------------------------------------------------------------
+Mã hóa mật khẩu bằng BCrypt
 
-** Cấu trúc dự án
+Xác thực người dùng bằng Spring Security
 
-``` plaintext
+Tính lương (Salary Management)
+
+Tính lương cơ bản = 1.800.000 × hệ số
+
+Cộng phụ cấp ăn trưa
+
+Cộng phụ cấp xăng xe
+
+Hiển thị tổng lương
+
+Thống kê tổng quỹ lương
+
+Báo cáo & Thống kê
+
+Tổng số nhân viên
+
+Tổng quỹ lương
+
+Lương trung bình
+
+Kiến trúc và Mô hình dữ liệu
+Kiến trúc hệ thống
+
+Ứng dụng được xây dựng theo mô hình MVC (Model – View – Controller):
+
+Controller: Xử lý request từ người dùng
+
+Service: Xử lý nghiệp vụ
+
+Repository: Truy cập dữ liệu
+
+Model: Đại diện thực thể dữ liệu
+
+Các lớp Model chính
+NhanVien
+
+Thuộc tính:
+
+id
+
+maNhanVien
+
+hoTen
+
+truong
+
+khoa
+
+chucVu
+
+heSo
+
+loaiNhanVien
+
+email
+
+soDienThoai
+
+phuCapAnTrua
+
+phuCapXangXe
+
+Phương thức:
+
+getter/setter
+
+toString()
+
+TaiKhoan
+
+Thuộc tính:
+
+id
+
+email
+
+matKhau
+
+Phương thức:
+
+getter/setter
+
+Repository Layer
+
+NhanVienRepository
+
+TaiKhoanRepository
+
+Sử dụng Spring Data JPA để thao tác với database.
+
+Service Layer
+
+NhanVienService
+
+UserDetailsServiceImpl
+
+InitData
+
+Controller Layer
+
+NhanVienController
+
+AuthController
+
+Security Layer
+
+SecurityConfig
+
+UserDetailsServiceImpl
+
+Công nghệ sử dụng
+
+Java 17
+
+Spring Boot 3.1.4
+
+Spring Security
+
+Spring Data JPA
+
+Thymeleaf
+
+Bootstrap 5
+
+H2 Database
+
+Maven
+
+Cấu trúc dự án
 phenikaa-hr/
-├── pom.xml
 ├── src/main/java/com/phenikaa/nhansu/
 │   ├── controller/
 │   ├── model/
@@ -57,65 +171,69 @@ phenikaa-hr/
 └── src/main/resources/
     ├── templates/
     └── static/
-```
+Hướng dẫn chạy dự án
+Yêu cầu hệ thống
 
-------------------------------------------------------------------------
+Java 17 hoặc cao hơn
 
- Biểu đồ hệ thống
- Cấu trúc dự án
-<img width="662" height="549" alt="Screenshot 2026-03-02 115713" src="https://github.com/user-attachments/assets/25b79459-270c-4969-b3b6-d304cccf03bb" />
+Maven 3.6+
 
-![Cấu trúc dự án](chart_structure.png)
+Cài đặt và chạy
 
-------------------------------------------------------------------------
+Clone repository:
 
-2 Chức năng hệ thống
+git clone <link-repository-của-bạn>
+cd phenikaa-hr
 
-![Chức năng hệ thống](chart_functions.png)
+Build và chạy:
 
-------------------------------------------------------------------------
-
-Mô hình dữ liệu (Entity UML)
-
-![Entity UML](chart_entity.png)
-
-------------------------------------------------------------------------
-
-Mô hình dữ liệu
-
-Entity: NhanVien
-
--   id : Long (PK)\
--   maNhanVien : String\
--   hoTen : String\
--   truong : String\
--   khoa : String\
--   chucVu : String\
--   heSo : Double\
--   loaiNhanVien : String\
--   email : String\
--   soDienThoai : String\
--   phuCapAnTrua : Double\
--   phuCapXangXe : Double
-
-Entity: TaiKhoan
-
--   id : Long (PK)\
--   email : String\
--   matKhau : String (BCrypt)
-
-------------------------------------------------------------------------
-
-Hướng dẫn chạy
-
-``` bash
-mvn clean compile
+mvn clean install
 mvn spring-boot:run
-```
 
-Truy cập: http://localhost:8080
+Truy cập:
 
-------------------------------------------------------------------------
+http://localhost:8080/
+Tính năng nổi bật
+1. Kiến trúc chuẩn Spring Boot
+
+Phân tầng rõ ràng
+
+Dễ mở rộng
+
+Bảo mật với Spring Security
+
+2. Tính lương tự động
+
+Tự động tính theo hệ số
+
+Hỗ trợ phụ cấp
+
+Không cần tính tay
+
+3. Giao diện Web thân thiện
+
+Sử dụng Thymeleaf
+
+Responsive với Bootstrap
+
+Form validation
+
+Hình ảnh & Sơ đồ
+1. Class Diagram
+
+(Class Diagram – thêm ảnh vào đây)
+
+2. Activity Diagram
+
+(Activity Diagram – thêm ảnh vào đây)
+
+3. Lưu đồ thuật toán
+
+(Lưu đồ thuật toán – thêm ảnh vào đây)
+
+Kết luận
+
+Phenikaa HR là hệ thống quản lý nhân sự hoàn chỉnh, áp dụng kiến thức về OOP, Spring Boot và bảo mật vào bài toán thực tế trong môi trường đại học.--------------------------
  Kết luận
  Dự án thể hiện khả năng áp dụng Spring Boot, JPA và Spring Security\
 vào bài toán quản lý nhân sự thực tế trong môi trường đại học.
