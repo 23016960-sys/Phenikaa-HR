@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">🎓 Phenikaa HR</h1>
+  <h1 align="center"> Phenikaa HR</h1>
   <p align="center">
     Hệ thống Quản lý Nhân sự Đại học Phenikaa<br>
     <b>Spring Boot • Java 17 • Spring Security • JPA</b>
