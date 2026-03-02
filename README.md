@@ -19,8 +19,10 @@
 
 #  Thành viên nhóm
 
-- Nguyễn Văn Bắc  
-- (Thêm thành viên nếu có)
+- Nguyễn Văn Bắc
+- 23016960
+- Phạm Tuấn Đạt
+- 23010889
 
 ---
 
