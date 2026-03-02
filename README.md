@@ -63,6 +63,7 @@ phenikaa-hr/
 
  Biểu đồ hệ thống
  Cấu trúc dự án
+<img width="662" height="549" alt="Screenshot 2026-03-02 115713" src="https://github.com/user-attachments/assets/25b79459-270c-4969-b3b6-d304cccf03bb" />
 
 ![Cấu trúc dự án](chart_structure.png)
 
