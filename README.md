@@ -174,6 +174,7 @@ http://localhost:8080/
 ```
 
 ---
+Hoặc nhấn trực tiếp vào đường link: https://phenikaa-hr.onrender.com/
 
 #  UML Diagrams
 
