@@ -17,14 +17,14 @@
 
 ---
 
-# 👥 Thành viên nhóm
+#  Thành viên nhóm
 
 - Nguyễn Văn Bắc  
 - (Thêm thành viên nếu có)
 
 ---
 
-# 📌 Giới thiệu
+#  Giới thiệu
 
 **Phenikaa HR** là hệ thống quản lý nhân sự dành cho Đại học Phenikaa.  
 Ứng dụng được xây dựng bằng **Spring Boot** theo mô hình **MVC**, hỗ trợ:
@@ -36,34 +36,34 @@
 
 ---
 
-# 🚀 Chức năng chính
+#  Chức năng chính
 
-## 👨‍💼 Quản lý nhân viên
+##  Quản lý nhân viên
 - Thêm / Sửa / Xóa / Xem danh sách
 - Phân loại theo trường – khoa – chức vụ
 - Tự động gán hệ số theo chức vụ
 
-## 🔐 Quản lý tài khoản
+##  Quản lý tài khoản
 - Đăng ký
 - Đăng nhập
 - Mã hóa mật khẩu bằng BCrypt
 - Bảo mật bằng Spring Security
 
-## 💰 Tính lương
+##  Tính lương
 
 ```bash
 Lương cơ bản = 1.800.000 × hệ số
 Tổng lương = Lương cơ bản + Phụ cấp ăn trưa + Phụ cấp xăng xe
 ```
 
-## 📊 Báo cáo
+##  Báo cáo
 - Tổng số nhân viên
 - Tổng quỹ lương
 - Lương trung bình
 
 ---
 
-# 🏗 Kiến trúc hệ thống
+#  Kiến trúc hệ thống
 
 ```bash
 Controller → Service → Repository → Database
@@ -77,9 +77,9 @@ Controller → Service → Repository → Database
 
 ---
 
-# 🧱 Mô hình dữ liệu
+#  Mô hình dữ liệu
 
-## 🔹 Entity: NhanVien
+##  Entity: NhanVien
 
 | Trường | Kiểu |
 |--------|------|
@@ -98,7 +98,7 @@ Controller → Service → Repository → Database
 
 ---
 
-## 🔹 Entity: TaiKhoan
+##  Entity: TaiKhoan
 
 | Trường | Kiểu |
 |--------|------|
@@ -108,7 +108,7 @@ Controller → Service → Repository → Database
 
 ---
 
-# 📂 Cấu trúc dự án
+#  Cấu trúc dự án
 
 ```bash
 phenikaa-hr/
@@ -122,7 +122,7 @@ phenikaa-hr/
 
 ---
 
-# ⚙ Công nghệ sử dụng
+#  Công nghệ sử dụng
 
 - Java 17
 - Spring Boot 3.1.4
@@ -135,13 +135,13 @@ phenikaa-hr/
 
 ---
 
-# ▶ Hướng dẫn chạy
+#  Hướng dẫn chạy
 
-## 📌 Yêu cầu
+##  Yêu cầu
 - Java 17+
 - Maven 3.6+
 
-## 🚀 Cài đặt
+##  Cài đặt
 
 ```bash
 git clone <link-repository>
@@ -158,31 +158,31 @@ http://localhost:8080/
 
 ---
 
-# 🖼 UML Diagrams
+#  UML Diagrams
 
-## 1️⃣ Class Diagram
+## 1️ Class Diagram
 <img width="662" height="549" alt="Screenshot 2026-03-02 115713" src="https://github.com/user-attachments/assets/e8fe8429-0abb-4ca6-99b8-0abb3937773a" />
 
-## 2️⃣ Activity Diagram
+## 2️ Activity Diagram
 <img width="1919" height="3294" alt="Activity_Diagram_Final_Oval_End" src="https://github.com/user-attachments/assets/3336fce7-6738-4649-8c12-92e44b7988b3" />
 
 
-## 3️⃣ Flowchart
+## 3️ Flowchart
 
 <img width="1919" height="3294" alt="Flowchart_Final_OvalStyle" src="https://github.com/user-attachments/assets/aef38b86-c51a-49c6-a248-3602d420dfd2" />
 
 ---
 
-# 🌟 Điểm nổi bật
+#  Điểm nổi bật
 
-- ✔ Kiến trúc phân tầng rõ ràng
-- ✔ Bảo mật chuẩn Spring Security
-- ✔ Tính lương tự động
-- ✔ Dễ mở rộng sang MySQL/PostgreSQL
-- ✔ Giao diện thân thiện, responsive
+-  Kiến trúc phân tầng rõ ràng
+-  Bảo mật chuẩn Spring Security
+-  Tính lương tự động
+-  Dễ mở rộng sang MySQL/PostgreSQL
+-  Giao diện thân thiện, responsive
 ---
 
-# 📌 Kết luận
+#  Kết luận
 
 Phenikaa HR là hệ thống quản lý nhân sự hoàn chỉnh, áp dụng kiến thức về:
 
