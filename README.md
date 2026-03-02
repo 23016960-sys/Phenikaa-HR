@@ -111,13 +111,30 @@ Controller → Service → Repository → Database
 #  Cấu trúc dự án
 
 ```bash
-phenikaa-hr/
-├── controller/
-├── model/
-├── repository/
-├── security/
-├── service/
-└── resources/
+  Phenikaa-HR/
+├─ .gitignore
+├─ Dockerfile
+├─ README.md
+├─ pom.xml
+├─ render.yaml
+├───src
+├───main
+│         ├───java
+│         │   └───com
+│         │       └───phenikaa
+│         │           └───nhansu
+│         │               ├───controller
+│         │               ├───model
+│         │               ├───repository
+│         │               ├───security
+│         │               └───service
+│         └───resources
+│             ├───static
+│             │           └───images
+│             └───templates
+└───test
+            └───java
+
 ```
 
 ---
