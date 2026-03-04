@@ -19,7 +19,7 @@
 
 #  Thành viên nhóm
 
-- Nguyễn Văn Bắc
+- Nguyễn Văn Bắc(Trưởng nhóm)
 - 23016960
 - Phạm Tuấn Đạt
 - 23010889
