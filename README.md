@@ -23,6 +23,9 @@
 - 23016960
 - Phạm Tuấn Đạt
 - 23010889
+## Phân công
+- Nguyễn Văn Bắc: kiến trúc dự án, Spring Security, nghiệp vụ tính lương + báo cáo, deploy Render/Docker, review & tích hợp.
+- Phạm Tuấn Đạt: giao diện Thymeleaf/Bootstrap, các màn CRUD nhân viên, trang đăng nhập/đăng ký, seed dữ liệu và screenshot demo.
 
 ---
 
